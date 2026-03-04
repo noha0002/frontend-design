@@ -29,12 +29,14 @@ Kortene skal styles forskelligt ud fra deres indhold:
 
 1. **Kort uden billede**
    - Overskriften (`h3`) skal være større (som vist i referencebilledet).
+done 
 
 2. **Kort, der hverken har et billede eller en overskrift**  
    (dvs. kort med kun paragraftekst)
    - Paragrafteksten (`p`) skal have justeret typografi:
      - `font-size: 1.25rem`
      - `line-height: 1.4`
+     done
 
 3. **Kort med billede**
    - Billedet skal være **full bleed** (gå helt ud til kortets kanter).
