@@ -34,12 +34,14 @@ Du får udleveret markup og lidt CSS. Din opgave er at **implementere** containe
   ```css
   article {
     container: article / inline-size;
+    
   }
   ```
 - Gør `header` til container:
   ```css
   header {
     container: header / inline-size;
+    
   }
   ```
 
@@ -51,6 +53,7 @@ Du får udleveret markup og lidt CSS. Din opgave er at **implementere** containe
    @container article (width < 550px) {
      /* fx centrér album-detaljer, fuldbredde knapper, negativ margin på .content */
    }
+
    ```
 
 2. **Header-breakpoint (mellemstore visninger):**

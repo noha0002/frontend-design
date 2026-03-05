@@ -19,6 +19,7 @@ article {
     padding: 1rlh;
     max-inline-size: 1200px;
     margin-inline: auto;
+    container: article / inline-size;
 
     display: grid;
     gap: 1.5rlh;
@@ -27,13 +28,42 @@ article {
         grid-template-columns: 300px 1fr;
     }
 
-    p {
-        font-size: .9rem;
-        color: var(--body);
-    }
+   
+
+@container article (width < 550px) {
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+   
+  }
+   .actions button[data-button] {
+    display: inline-block; 
+    width: 200px;   
+    height: 50px; 
+}
+
+
+  img {
+    width: 100%;
+    display: block;
+    mask-image: linear-gradient(180deg, black 50%, transparent);
+  }
+
+  p {
+    font-size: .9rem;
+    color: var(--body);
+  }
+}
 }
 
 header {
+    container: header / inline-size;
+
+    @container header (width >= 550px) {
+        grid-template-columns: 250px 1fr;
+    }
 
     img {
         aspect-ratio: 1;
@@ -84,6 +114,8 @@ header {
     list-style: none;
     padding: 0;
     margin: 0;
+
+     
 
     button[data-button] {
         border-radius: 1e5px;
