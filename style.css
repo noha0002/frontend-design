@@ -14,3 +14,59 @@
 body {
     font-family: system-ui, sans-serif;
 }
+
+article {
+  --measure: 68ch;           
+  --flow-space: 1.5rem;  /*hvor meget luft der er */
+  padding: var(--space-l);    
+  
+  max-inline-size: var(--measure);  /*	var(--measure) = 68ch → maks 68 tegn i én linje
+	                                    	max-inline-size fortæller browseren:
+                                    “Jeg vil ikke have, at artiklen bliver bredere end 68 tegn, selvom skærmen er større”*/
+  margin-inline: auto;              
+          
+  color: var(--gray-900);                  
+}
+
+
+article > * + * {
+  margin-block-start: var(--flow-space); /*den siger alle elementer bortset fra den frøste skal have flow space på 1.5rem.  Du skal bruge margin-block-start for at fortælle hvilken egenskab den skal bruges på (top/margin). */
+  margin-block-start: var(--space-l); /* sætter afstanden ovenfor element*/
+
+}
+
+
+:root {
+  --step--1: clamp(0.89rem, 0.86rem + 0.16vw, 1rem); 
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);  
+  --step-1: clamp(1.25rem, 1.12rem + 0.6vw, 1.5rem); 
+  --step-2: clamp(1.56rem, 1.3rem + 1.2vw, 2rem);   
+    --space-s: clamp(0.75rem, 0.7rem + 0.2vw, 0.9rem);
+	--space-m: clamp(1rem, 0.9rem + 0.4vw, 1.25rem);
+    --space-l: clamp(1.5rem, 1.3rem + 0.8vw, 2rem);
+}
+
+h1 {
+  font-size: var(--step-2);
+}
+
+h2 {
+  font-size: var(--step-1);
+}
+
+h3 {
+  font-size: var(--step-0);
+}
+
+p {
+  font-size: var(--step-0); 
+}
+
+p.lead {
+  font-size: var(--step-1); 
+}
+
+small {
+  font-size: var(--step--1);
+}
+
